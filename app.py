@@ -31,6 +31,9 @@ GYRO_DEAD     = 3.0
 TURN_INVERT   = -1
 LOG_MAX       = math.log(1 + MAX_RANGE_M)
 DRAW_OFFSET   = -math.pi * 0.5
+ASSET_PATH    = "/apps/tildagon_wifi_radar/"
+LOGO_W        = 140
+LOGO_H        = 80
 
 THEMES = [
     {"bg": (0.0, 0.02, 0.0), "grid": (0.0, 0.15, 0.0),
@@ -294,11 +297,9 @@ class WifiRadarApp(app.App):
         tx = self._tilt_x
         ty = self._tilt_y
 
-        ctx.font_size = 18
-        t = "WiFi Radar"
-        ctx.rgb(0.0, 0.83, 1.0)
-        ctx.move_to(-ctx.text_width(t) / 2 + tx * 1.2, -50 + ty * 1.2)
-        ctx.text(t)
+        lx = -LOGO_W / 2 + tx * 1.0
+        ly = -LOGO_H / 2 - 20 + ty * 1.0
+        ctx.image(ASSET_PATH + "logo.png", lx, ly, LOGO_W, LOGO_H)
 
         ctx.font_size = 11
         lines = [
@@ -308,7 +309,7 @@ class WifiRadarApp(app.App):
             ("IMU Directional Radar", 0.5, 0.4, 0.2),
             ("WiFi AP Scanner", 0.5, 0.4, 0.2),
         ]
-        y = -15
+        y = 35
         for txt, r, g, b in lines:
             if not txt:
                 y += 8
@@ -321,7 +322,7 @@ class WifiRadarApp(app.App):
         ctx.font_size = 9
         t = "ANY BTN: BACK"
         ctx.rgb(0.3, 0.3, 0.3)
-        ctx.move_to(-ctx.text_width(t) / 2, 80)
+        ctx.move_to(-ctx.text_width(t) / 2, 95)
         ctx.text(t)
         ctx.restore()
 
