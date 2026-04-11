@@ -1,0 +1,13 @@
+[app]
+name = "Tildagon WiFi Radar"
+category = "Apps"
+
+[entry]
+class = "WifiRadarApp"
+
+[metadata]
+author = "webboggles"
+license = "MIT"
+url = "https://github.com/webboggles/tildagon-wifi-radar"
+description = "Single-badge directional WiFi radar — rotate the badge to sweep, APs appear as blips on a polar display."
+version = "1"
