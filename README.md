@@ -2,6 +2,8 @@
 
 Single-badge directional WiFi radar for the [Tildagon badge](https://tildagon.badge.emfcamp.org/) at EMF Camp. Rotate the badge to sweep &mdash; APs appear as blips on a polar display.
 
+![WiFi Radar on Tildagon badge](screenshot.png)
+
 ## Features
 
 - **Polar radar display** &mdash; scrolling sweep driven by the onboard IMU gyroscope
